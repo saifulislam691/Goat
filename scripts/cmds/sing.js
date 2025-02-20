@@ -3,7 +3,7 @@ const fs = require("fs-extra");
 const { getStreamFromURL } = global.utils;
 const baseApiUrl = async () => {
   const base = await axios.get(
-`https://raw.githubusercontent.com/Blankid018/D1PT0/main/baseApiUrl.json`,
+`https://www.x-noobs-apis.42web.io/mostakim/ytSearch?search=zara Zara`,
   );
   return base.data.api;
 };
@@ -138,3 +138,14 @@ async function search(keyWord) {
         });
       }
     }
+    return results;
+  } catch (e) {
+    const error = new Error("Cannot search video");
+    error.code = "SEARCH_VIDEO_ERROR";
+    throw error;
+  }
+}
+
+async function getVideoInfo(url) {
+  //pore korbo😋.
+}
