@@ -47,7 +47,7 @@ onReply: async function({ api, event, Reply, getLang, commandName, prefix }) {
         const index = body.split(/\s+/);
         for (const ArYanIndex of index) {
             if (isNaN(ArYanIndex) || ArYanIndex <= 0 || ArYanIndex > Reply.pending.length) return api.sendMessage(getLang("invaildNumber", ArYanIndex), threadID, messageID);
-            api.sendMessage(`𝗕𝗢𝗧 𝗔𝗣𝗣𝗥𝗢𝗩𝗘 𝗦𝗨𝗖𝗖𝗘𝗦\n\n𝗕𝗼𝘁 𝗔𝗱𝗺𝗶𝗻: 𝗝𝗼𝘆 𝗔𝗵𝗺𝗲𝗱\n\n𝗙𝗮𝗰𝗲𝗯𝗼𝗼𝗸:https://www.facebook.com/profile.php?id=100000121528628`, Reply.pending[ArYanIndex - 1].threadID);
+            api.sendMessage(`চলে এসেছি আমি পিচ্চি জয় তোমাদের মাঝে 🙈🫣`, Reply.pending[ArYanIndex - 1].threadID);
             count+=1;
         }
         return api.sendMessage(getLang("approveSuccess", count), threadID, messageID);
@@ -61,3 +61,21 @@ onStart: async function({ api, event, getLang, commandName }) {
 
     try {
     var spam = await api.getThreadList(100, null, ["OTHER"]) || [];
+    var pending = await api.getThreadList(100, null, ["PENDING"]) || [];
+  } catch (e) { return api.sendMessage(getLang("cantGetPendingList"), threadID, messageID) }
+
+  const list = [...spam, ...pending].filter(group => group.isSubscribed && group.isGroup);
+
+    for (const ArYan of list) msg += `${index++}/ ${ArYan.name}(${ArYan.threadID})\n`;
+
+    if (list.length != 0) return api.sendMessage(getLang("returnListPending", list.length, msg), threadID, (err, info) => {
+    global.GoatBot.onReply.set(info.messageID, {
+            commandName,
+            messageID: info.messageID,
+            author: event.senderID,
+            pending: list
+        })
+  }, messageID);
+    else return api.sendMessage(getLang("returnListClean"), threadID, messageID);
+}
+};
