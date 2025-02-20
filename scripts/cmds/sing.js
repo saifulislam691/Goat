@@ -138,14 +138,3 @@ async function search(keyWord) {
         });
       }
     }
-    return results;
-  } catch (e) {
-    const error = new Error("Cannot search video");
-    error.code = "SEARCH_VIDEO_ERROR";
-    throw error;
-  }
-}
-
-async function getVideoInfo(url) {
-  //pore korbo😋.
-}
