@@ -35,29 +35,29 @@
     "ignoreCommand": []
   },
   "adminBot": [
-    "100002435314153"
+    "100011152309303"
   ],
   "whiteListMode": {
     "enable": false,
     "whiteListIds": [
-      "100002435314153"
+      "100011152309303"
     ],
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
-  "nickNameBot": "JOY-BOT",
-  "prefix": ".",
+  "nickNameBot": "SAIFUL-BOT",
+  "prefix": "!",
   "ArYanapi": "https://aryan-rest-api.onrender.com",
   "api": "",
   "api2": "",
   "api3": "",
-  "authorName": "aminul sordar",
-  "facebook2": "https://www.facebook.com/100071880593545",
-  "facebook": "https://www.facebook.com/100071880593545",
-  "email": "aminulsordar04@gmail.com",
+  "authorName": "saiful islam",
+  "facebook2": "https://www.facebook.com/100011152309303",
+  "facebook": "https://www.facebook.com/100011152309303",
+  "email": "si0803144@gmail.com",
   "replit": "Off",
-  "github": "https://github.com/Aminulsordar",
+  "github": "https://github.com/saifulislam691",
   "insta": "no",
-  "age": "18+",
+  "age": "26+",
   "TG": "",
   "database": {
     "type": "sqlite",
